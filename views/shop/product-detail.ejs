@@ -1,0 +1,28 @@
+<!-- shop/product-detail.ejs -->
+<%-include('../includes/head.ejs')%>
+  </head>
+
+  <body>
+   <%-include('../includes/navbar.ejs')%>
+    <main>    
+      <div>        
+        <h1><%=product.title%></h1>
+        <hr>
+        <div>
+          <img          
+            src="<%=product.imageUrl%>"
+            alt="<%=product.imageUrl%>"
+            width="300"
+          height="200"
+          >
+        </div>
+        <h2>$<%=product.price%></h2>
+        <div>
+          <p><%=product.description%></p>
+        </div>      
+        <%if(isauthenticated){%>
+       <%- include('../includes/add-to-cart.ejs')%>
+       <%}%>
+      </div>  
+    </main>
+<%-include('../includes/end.ejs')%>

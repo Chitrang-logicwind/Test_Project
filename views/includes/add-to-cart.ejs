@@ -1,0 +1,7 @@
+<!-- includes/add-to-cart.ejs -->
+<div>
+  <form action="/cart" method="POST">
+    <button type="submit">Add To Cart</button>
+    <input type="hidden" name="productId" value="<%=product._id%>" />
+  </form>
+</div>

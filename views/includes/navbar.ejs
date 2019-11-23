@@ -1,0 +1,33 @@
+<!-- includes/navbar.ejs -->
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Shop</a></li>
+        <li><a href="/products">Products</a></li>
+        <%if(isauthenticated){%>
+        <li><a href="/cart">Cart</a></li>
+        <li><a href="/orders">Orders</a></li>
+        <li><a href="/admin/add-product">Add Product</a></li>
+        <li><a href="/admin/products">Admin Products</a></li>
+        <%}%>
+        <ul class="nav navbar-nav">
+          <%if(!isauthenticated){%>
+          <li>
+            <a href="/login">Login</a>
+          </li>
+          <li>
+            <a href="/signup">Signup</a>
+          </li>
+          <%}else{%>
+          <li>
+            <form action="/logout" method="POST">
+              <button type="submit">Logout</button>
+            </form>
+          </li>
+          <%}%>
+        </ul>
+      </ul>
+    </div>
+  </nav>
+</header>
